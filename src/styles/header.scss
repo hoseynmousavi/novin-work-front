@@ -10,6 +10,14 @@
   justify-content: space-between;
   background-color: var(--first-background-color);
   z-index: 3;
+
+  @media screen and (max-width: 1000px) {
+    padding: 0 var(--tablet-padding);
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0 var(--mobile-padding);
+  }
 }
 
 .header-logo-cont {
