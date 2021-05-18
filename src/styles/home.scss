@@ -1,0 +1,209 @@
+@import "mixin";
+
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--header-height);
+  padding: 80px var(--desktop-padding) 0 var(--desktop-padding);
+  background-color: var(--second-background-color);
+}
+
+.home-section-right {
+  margin-top: -40px;
+  text-align: right;
+  max-width: 570px;
+  margin-bottom: 20px;
+}
+
+.home-section-title {
+  font-size: var(--damn-font);
+}
+
+.home-section-desc {
+  font-size: var(--title-font);
+  margin: 20px 0 5px 0;
+  color: var(--first-color);
+
+  &.silver {
+    color: var(--first-border-color);
+  }
+}
+
+.home-section-button {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: var(--text-color);
+  color: var(--first-background-color);
+  font-size: var(--title-font);
+  font-weight: bold;
+  border-radius: var(--first-radius);
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.home-section-img {
+  width: 50%;
+  max-width: 500px;
+  align-self: flex-end;
+}
+
+.home-section-second {
+  display: flex;
+  padding: 50px var(--desktop-padding);
+}
+
+.home-section-second-item {
+  text-align: center;
+  margin: 30px 70px;
+}
+
+.home-section-second-item-svg {
+  width: 50px;
+  height: 50px;
+  fill: var(--first-color);
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 0 9px 1px rgba(255, 255, 255, 0.4);
+  margin-bottom: 5px;
+  transition: all ease 0.6s;
+
+  &:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 0 15px 1px rgba(255, 255, 255, 0.7);
+  }
+}
+
+.home-section-second-item-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 5px 0 7px 0;
+}
+
+.home-section-second-item-circle {
+  width: 5px;
+  height: 5px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: var(--first-color);
+
+  &.service {
+    width: 8px;
+    height: 8px;
+    margin-left: 8px;
+    margin-right: -16px;
+  }
+}
+
+.home-section-second-item-desc {
+  font-size: var(--small-font);
+  @include justify;
+  text-align-last: center;
+}
+
+.home-section-third {
+  padding: 50px var(--desktop-padding);
+  min-height: calc(100vh - 100px);
+  background-color: var(--second-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-section-third-content {
+  text-align: right;
+  max-width: 450px;
+  margin-bottom: 40px;
+}
+
+.home-section-third-first {
+  color: var(--first-color);
+  font-size: var(--big-font);
+}
+
+.home-section-third-second {
+  font-size: var(--damn-font);
+  font-weight: bold;
+  margin: 10px 0 20px 0;
+}
+
+.home-section-third-third {
+  color: var(--first-border-color);
+  font-size: var(--big-font);
+}
+
+.home-section-third-img {
+  width: 50%;
+  max-width: 450px;
+  transform: rotateY(180deg) rotate(-10deg);
+}
+
+.home-section-third-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 25px 10px 20px;
+  border: 1px solid var(--first-border-color);
+  border-radius: var(--first-radius);
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: var(--title-font);
+  transition: border ease 0.2s;
+
+  &:hover {
+    border: 1px solid var(--text-color);
+  }
+}
+
+.home-section-third-button-svg {
+  width: 20px;
+  margin-right: 6px;
+  margin-bottom: 1px;
+  fill: var(--text-color);
+}
+
+.home-section-forth {
+  padding: 50px var(--desktop-padding);
+}
+
+.home-section-forth-title {
+  font-size: var(--huge-font);
+  margin-bottom: 40px;
+}
+
+.home-section-forth-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+  margin-bottom: 80px;
+}
+
+.home-section-forth-img {
+  width: 30%;
+  max-width: 350px;
+  margin-left: 20%;
+
+  &.left {
+    margin-left: 0;
+    margin-right: 20%;
+  }
+}
+
+.home-section-forth-content-inner {
+  max-width: 50%;
+}
+
+.home-section-forth-content-title {
+  align-items: center;
+  display: flex;
+  font-size: var(--big-font);
+  margin-bottom: 8px;
+}
+
+.home-section-forth-content-text {
+  font-size: var(--title-font);
+  line-height: 28px;
+  @include justify;
+}
