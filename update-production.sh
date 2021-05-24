@@ -14,7 +14,8 @@ sed -i "s~SECOND_BACKGROUND_COLOR~$REACT_APP_SECOND_BACKGROUND_COLOR~g" build/in
 sed -i "s~THIRD_BACKGROUND_COLOR~$REACT_APP_THIRD_BACKGROUND_COLOR~g" build/index.html &&
 sed -i "s~SOLID_LIGHT~$REACT_APP_SOLID_LIGHT~g" build/index.html &&
 sed -i "s~SOLID_DARK~$REACT_APP_SOLID_DARK~g" build/index.html &&
-sed -i "s~TEXT_COLOR~$REACT_APP_TEXT_COLOR~g" build/index.html &&
+sed -i "s~FIRST_TEXT_COLOR~$REACT_APP_FIRST_TEXT_COLOR~g" build/index.html &&
+sed -i "s~SECOND_TEXT_COLOR~$REACT_APP_SECOND_TEXT_COLOR~g" build/index.html &&
 sed -i "s~FIRST_BORDER_COLOR~$REACT_APP_FIRST_BORDER_COLOR~g" build/index.html &&
 sed -i "s~SECOND_BORDER_COLOR~$REACT_APP_SECOND_BORDER_COLOR~g" build/index.html &&
 sed -i "s~FIRST_MATERIAL_COLOR~$REACT_APP_FIRST_MATERIAL_COLOR~g" build/index.html &&

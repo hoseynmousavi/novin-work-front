@@ -24,27 +24,27 @@ function Footer()
                     </div>
                     <div className="footer-left-details">
                         <div className="footer-left-details-call">
-                            <a href="mailto:info@novinwork.com" className="footer-left-details-call-item">
+                            <a href={`mailto:${process.env.REACT_APP_EMAIL}`} className="footer-left-details-call-item">
                                 <Material className="footer-left-details-call-material">
-                                    <div className="direction-ltr">info@novinwork.com</div>
+                                    <div className="direction-ltr">{process.env.REACT_APP_EMAIL}</div>
                                     <AtSvg className="footer-left-details-call-svg"/>
                                 </Material>
                             </a>
                             <a href="tel:09109170063" className="footer-left-details-call-item">
                                 <Material className="footer-left-details-call-material">
-                                    <div className="direction-ltr">0910 91 700 63</div>
+                                    <div className="direction-ltr">{process.env.REACT_APP_PHONE_NUMBER}</div>
                                     <MobilePhoneSvg className="footer-left-details-call-svg"/>
                                 </Material>
                             </a>
                             <a href="tel:09195100678" className="footer-left-details-call-item">
                                 <Material className="footer-left-details-call-material">
-                                    <div className="direction-ltr">0919 5100 678</div>
+                                    <div className="direction-ltr">{process.env.REACT_APP_PHONE}</div>
                                     <MobilePhoneSvg className="footer-left-details-call-svg"/>
                                 </Material>
                             </a>
                         </div>
                         <div className="footer-left-form">
-                            تهران، دانشگاه امیرکبیر، دفتر فینوداد
+                            {process.env.REACT_APP_ADDRESS}
                         </div>
                         <div className="footer-left-social">
                             <div className="footer-left-social-title">ما را در شبکه‌های اجتماعی دنبال کنید:</div>
