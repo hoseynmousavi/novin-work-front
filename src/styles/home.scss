@@ -43,6 +43,7 @@
   margin: 20px 0 5px 0;
   color: var(--first-color);
   @include justify;
+  text-align-last: right;
 
   &.silver {
     color: var(--second-text-color);
@@ -50,6 +51,7 @@
 
   @media screen and (max-width: 480px) {
     font-size: var(--regular-font);
+    text-align-last: center;
   }
 }
 
