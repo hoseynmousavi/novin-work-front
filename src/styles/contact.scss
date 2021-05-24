@@ -1,5 +1,5 @@
 .show-session-quiz-back {
-  background-color: var(--second-material-color);
+  background-color: var(--first-material-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -157,11 +157,11 @@
   transition: all ease 0.2s;
 
   &.err {
-    border: 1px solid var(--second-color) !important;
+    border: 1px solid var(--first-color) !important;
   }
 
   &:focus {
-    border: 1px solid var(--first-color);
+    border: 1px solid var(--second-color);
   }
 
   &::placeholder {
@@ -177,7 +177,6 @@
   margin-top: auto;
 }
 
-
 .profile-page-submit {
   display: inline-block;
   padding: 9px 0;
@@ -186,7 +185,7 @@
   width: 120px;
   text-align: center;
   color: var(--first-background-color);
-  background-color: var(--first-text-color);
+  background-color: var(--second-color);
 
   @media screen and (max-width: 480px) {
     width: 100%;

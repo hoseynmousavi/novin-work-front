@@ -2,3 +2,7 @@
   text-align: justify;
   white-space: pre-line;
 }
+
+@mixin btn-back {
+  background-image: linear-gradient(to bottom, var(--second-color), var(--second-gradient-color));
+}
