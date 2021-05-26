@@ -12,7 +12,7 @@ import MobileFrame from "../../media/svgs/MobileFrame"
 import site from "../../media/images/resume.jpg"
 import siteMobile from "../../media/images/resume-m.jpg"
 
-function Home(props)
+function HomePage(props)
 {
     const {showContact} = props
     return (
@@ -64,9 +64,9 @@ function Home(props)
                     </Material>
                 </div>
                 <div className="home-section-third-images">
-                    <img className="home-section-third-img-mobile" src={siteMobile} alt="آخرین نمونه کار نوین ورک"/>
+                    <img loading="lazy" className="home-section-third-img-mobile" src={siteMobile} alt="آخرین نمونه کار نوین ورک"/>
                     <MobileFrame className="home-section-third-mobile"/>
-                    <img className="home-section-third-img-in" src={site} alt="آخرین نمونه کار نوین ورک"/>
+                    <img loading="lazy" className="home-section-third-img-in" src={site} alt="آخرین نمونه کار نوین ورک"/>
                     <LaptopSvg className="home-section-third-img"/>
                 </div>
                 <Material className="home-section-third-button mobile">
@@ -76,13 +76,11 @@ function Home(props)
             </section>
 
             <section className="home-section-forth">
-                <div className="home-section-forth-title">خدمات نوین ورک</div>
-                <HomeService/>
-                <HomeService isLeftImg/>
+                <div className="home-section-forth-title">خدمات پلاس</div>
                 <HomeService/>
             </section>
         </>
     )
 }
 
-export default Home
+export default HomePage

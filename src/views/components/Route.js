@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react"
+import PropTypes from "prop-types"
 
 function Route(props)
 {
@@ -28,6 +29,10 @@ function Route(props)
 
     if (params) return <React.Fragment key={path}>{render({location: {pathname: location}, match: {params, path}})}</React.Fragment>
     else return null
+}
+
+Route.propTypes = {
+    path: PropTypes.string,
 }
 
 export default Route

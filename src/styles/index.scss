@@ -6,6 +6,8 @@
 @import "footer";
 @import "contact";
 @import "home";
+@import "resume";
+@import "about";
 @import "notification";
 @import "~react-toastify/dist/ReactToastify.css";
 
@@ -85,4 +87,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .direction-ltr {
   direction: ltr;
+}
+
+.main {
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
 }
