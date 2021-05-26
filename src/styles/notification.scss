@@ -1,0 +1,24 @@
+.Toastify {
+  text-align: right;
+}
+
+.Toastify__toast--info {
+  background: var(--first-color);
+}
+
+.Toastify__toast--success {
+  background: var(--success-color);
+}
+
+.Toastify__toast--warning {
+  background: var(--first-color);
+}
+
+.Toastify__toast--error {
+  background: var(--first-color);
+}
+
+.Toastify__toast {
+  border-radius: var(--first-radius);
+  font-family: "my-font", serif;
+}

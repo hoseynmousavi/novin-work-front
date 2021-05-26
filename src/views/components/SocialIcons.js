@@ -11,7 +11,7 @@ function SocialIcons()
             <a href="https://t.me/novin_work" target="_blank" rel="noreferrer"><TelegramSvg className="footer-left-social-icon"/></a>
             <a href="https://www.linkedin.com/company/novin_work" target="_blank" rel="noreferrer"><LinkedinSvg className="footer-left-social-icon"/></a>
             <a href="https://wa.me/+989309437519" target="_blank" rel="noreferrer"><WhatsappSvg className="footer-left-social-icon"/></a>
-            <a href="https://www.instagram.com/novin_work" target="_blank" rel="noreferrer"><InstaSvg className="footer-left-social-icon"/></a>
+            <a href="https://www.instagram.com/novinwork.company" target="_blank" rel="noreferrer"><InstaSvg className="footer-left-social-icon"/></a>
             <a href="https://twitter.com/novin_work" target="_blank" rel="noreferrer"><TwitterSvg className="footer-left-social-icon"/></a>
         </>
     )

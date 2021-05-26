@@ -20,9 +20,9 @@
 .header-contact-modal {
   z-index: 5;
   position: fixed;
-  width: 74%;
+  width: calc(100% - 2 * var(--desktop-padding));
+  left: var(--desktop-padding);
   font-size: var(--regular-font);
-  left: 13%;
   top: 50%;
   transform: translateY(-50%) scale(1);
   background-color: var(--first-background-color);
@@ -34,13 +34,13 @@
   text-align: right;
 
   @media screen and (max-width: 1000px) {
-    width: 84%;
-    left: 8%;
+    width: calc(100% - 2 * var(--tablet-padding));
+    left: var(--tablet-padding);
   }
 
   @media screen and (max-width: 480px) {
-    width: 90%;
-    left: 5%;
+    width: calc(100% - 2 * var(--mobile-padding));
+    left: var(--mobile-padding);
   }
 }
 

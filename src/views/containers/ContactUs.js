@@ -8,9 +8,21 @@ import MobilePhoneSvg from "../../media/svgs/MobilePhoneSvg"
 import numberCorrection from "../../helpers/numberCorrection"
 import Constant from "../../constant/Constant"
 import SocialIcons from "../components/SocialIcons"
+import request from "../../functions/request"
+import {toast} from "react-toastify"
 
 class ContactUs extends PureComponent
 {
+    constructor(props)
+    {
+        super(props)
+        this.state = {
+            title: "ثبت سفارش",
+        }
+    }
+
+    hideContact = () => window.history.back()
+
     showDialog = () => this.setState({showDialog: true})
 
     hideDialog = () => this.setState({showDialog: false})
@@ -33,47 +45,48 @@ class ContactUs extends PureComponent
 
     submit = () =>
     {
-        let {isLoading /*contactValid, titleValid, descValid, desc, contact, title*/} = this.state || {}
+        let {isLoading, contactValid, titleValid, descValid, desc, contact, title} = this.state || {}
         if (!isLoading)
         {
-            // if ((contactValid || contactValid === undefined) && titleValid && descValid)
-            // {
-            //     this.setState({isLoading: true}, () =>
-            //     {
-            //         const {actions} = this.props
-            //         actions.contactUs({
-            //             subject: Constant.SUBJECT_CHOICES[title],
-            //             message: desc,
-            //             contact_info: contact,
-            //             resolve: () =>
-            //             {
-            //                 this.setState({isLoading: false}, () =>
-            //                 {
-            //                     const {hideContact} = this.props
-            //                     hideContact()
-            //                     toast.success("پیام شما با موفقیت ارسال شد")
-            //                 })
-            //             },
-            //             reject: () => this.setState({isLoading: false}, () => toast.error("ارسال پیام با مشکل مواجه شد، بعداً امتحان کنید!")),
-            //         })
-            //     })
-            // }
-            // else
-            // {
-            //     if (titleValid === undefined) titleValid = false
-            //     if (descValid === undefined) descValid = false
-            //     this.setState({titleValid, descValid})
-            // }
+            if (contactValid && titleValid && descValid)
+            {
+                this.setState({isLoading: true}, () =>
+                {
+                    request.post({
+                        url: "contact",
+                        data: {
+                            subject: Constant.SUBJECT_CHOICES[title],
+                            description: desc,
+                            contact_info: contact,
+                        },
+                    })
+                        .then(() =>
+                        {
+                            this.setState({isLoading: false}, () =>
+                            {
+                                this.hideContact()
+                                toast.success("پیام شما با موفقیت ارسال شد")
+                            })
+                        })
+                        .catch(() => this.setState({isLoading: false}, () => toast.error("ارسال پیام با مشکل مواجه شد، بعداً امتحان کنید!")))
+                })
+            }
+            else
+            {
+                if (titleValid === undefined) titleValid = false
+                if (descValid === undefined) descValid = false
+                if (contactValid === undefined) contactValid = false
+                this.setState({titleValid, descValid, contactValid})
+            }
         }
     }
 
     render()
     {
         const {showDialog, title, isLoading, contact, contactValid, titleValid, descValid, desc} = this.state || {}
-        const {hideContact} = this.props
         return (
             <>
-                <div className="show-session-quiz-back dont-gesture" onClick={hideContact}/>
+                <div className="show-session-quiz-back dont-gesture" onClick={this.hideContact}/>
                 <div className="header-contact-modal dont-gesture">
                     {
                         showDialog && <div className="header-contact-modal-content-form-dialog-back" onClick={this.hideDialog}/>
@@ -110,7 +123,7 @@ class ContactUs extends PureComponent
                             />
                             <input className={`header-contact-modal-content-form-area ${contactValid || contactValid === undefined ? "" : "err"}`}
                                    value={contact || ""}
-                                   placeholder="ایمیل یا شماره تماس"
+                                   placeholder="ایمیل یا شماره تماس *"
                                    onChange={this.changeInput("contact")}
                             />
                             <Material className={`profile-page-submit ${isLoading ? "disable" : ""}`} onClick={this.submit}>

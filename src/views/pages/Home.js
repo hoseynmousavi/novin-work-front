@@ -1,6 +1,5 @@
 import Material from "../components/Material"
 import design from "../../media/images/design.png"
-import mobile from "../../media/images/mobile.png"
 import HomeDesc from "../components/HomeDesc"
 import KeyboardArrowSvg from "../../media/svgs/KeyboardArrowSvg"
 import HomeService from "../components/HomeService"
@@ -8,9 +7,14 @@ import WebSvg from "../../media/svgs/WebSvg"
 import AppSvg from "../../media/svgs/AppSvg"
 import SeoSvg from "../../media/svgs/SeoSvg"
 import GraphicSvg from "../../media/svgs/GraphicSvg"
+import LaptopSvg from "../../media/svgs/LaptopSvg"
+import MobileFrame from "../../media/svgs/MobileFrame"
+import site from "../../media/images/resume.jpg"
+import siteMobile from "../../media/images/resume-m.jpg"
 
-function Home()
+function Home(props)
 {
+    const {showContact} = props
     return (
         <>
             <section className="home-section">
@@ -22,28 +26,31 @@ function Home()
                         ما در نوین ورک با بهره گیری از پیشرفته ترین فناوری های روز دنیا با افتخار اقدام به طراحی وبسایت شما می‌کنیم.
                         ظاهری شکیل، امنیت بالا، سرعت مناسب و بهینه‌سازی را در کنار هم جمع کرده‌ایم.
                     </div>
-                    <Material className="home-section-button" backgroundColor="var(--second-material-color)">ثبت سفارش</Material>
+                    <Material className="home-section-button" backgroundColor="var(--second-material-color)" onClick={showContact}>ثبت سفارش</Material>
                 </div>
                 <img className="home-section-img desktop" src={design} alt="طراحی نوین"/>
             </section>
 
             <section className="home-section-second">
-                <HomeDesc title="طراحی وبسایت"
-                          desc="طراحی اختصاصی وب سایت حرفه ای با برنامه نویسی روز دنیا به صورت رسپانسیو و کاملا بهینه"
-                          icon={<WebSvg className="home-section-second-item-svg"/>}
-                />
-                <HomeDesc title="طراحی اپلیکیشن"
-                          desc="طراحی و برنامه نویسی اپلیکیشن اندروید و ios با به روزترین ابزار دنیا با متخصصین حرفه‌ای"
-                          icon={<AppSvg className="home-section-second-item-svg"/>}
-                />
-                <HomeDesc title="طراحی گرافیکی"
-                          desc="طراحی قالب سایت، لوگو، بنر، کاتالوگ، ست اداری و تصاویر متحرک متناسب با کسب و کار شما"
-                          icon={<GraphicSvg className="home-section-second-item-svg"/>}
-                />
-                <HomeDesc title="سئو و بهینه‌سازی"
-                          desc="بهینه سازی وب سایت برای کلمات کلیدی، ارتقای رتبه سایت، بررسی رقبا و تحلیل بازار اینترنتی"
-                          icon={<SeoSvg className="home-section-second-item-svg"/>}
-                />
+                <div className="home-section-second-title">خدمات ما</div>
+                <div className="home-section-second-content">
+                    <HomeDesc title="طراحی وبسایت"
+                              desc="طراحی اختصاصی وب سایت حرفه ای با برنامه نویسی روز دنیا به صورت رسپانسیو و کاملا بهینه"
+                              icon={<WebSvg className="home-section-second-item-svg"/>}
+                    />
+                    <HomeDesc title="طراحی اپلیکیشن"
+                              desc="طراحی و برنامه نویسی اپلیکیشن اندروید و ios با به روزترین ابزار دنیا با متخصصین حرفه‌ای"
+                              icon={<AppSvg className="home-section-second-item-svg"/>}
+                    />
+                    <HomeDesc title="طراحی گرافیکی"
+                              desc="طراحی قالب سایت، لوگو، بنر، کاتالوگ، ست اداری و تصاویر متحرک متناسب با کسب و کار شما"
+                              icon={<GraphicSvg className="home-section-second-item-svg"/>}
+                    />
+                    <HomeDesc title="سئو و بهینه‌سازی"
+                              desc="بهینه سازی وب سایت برای کلمات کلیدی، ارتقای رتبه سایت، بررسی رقبا و تحلیل بازار اینترنتی"
+                              icon={<SeoSvg className="home-section-second-item-svg"/>}
+                    />
+                </div>
             </section>
 
             <section className="home-section-third">
@@ -56,7 +63,12 @@ function Home()
                         <KeyboardArrowSvg className="home-section-third-button-svg"/>
                     </Material>
                 </div>
-                <img className="home-section-third-img" src={mobile} alt="آخرین نمونه کار نوین ورک"/>
+                <div className="home-section-third-images">
+                    <img className="home-section-third-img-mobile" src={siteMobile} alt="آخرین نمونه کار نوین ورک"/>
+                    <MobileFrame className="home-section-third-mobile"/>
+                    <img className="home-section-third-img-in" src={site} alt="آخرین نمونه کار نوین ورک"/>
+                    <LaptopSvg className="home-section-third-img"/>
+                </div>
                 <Material className="home-section-third-button mobile">
                     <div>مشاهده نمونه‌کارها</div>
                     <KeyboardArrowSvg className="home-section-third-button-svg"/>

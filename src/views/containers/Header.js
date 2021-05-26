@@ -1,35 +1,9 @@
 import logo from "../../media/images/logo.png"
 import Material from "../components/Material"
-import {useState} from "react"
-import ContactUs from "./ContactUs"
 
-function Header()
+function Header(props)
 {
-    const [isVisibleContact, setIsVisibleContact] = useState(false)
-
-    function hideContact()
-    {
-        setIsVisibleContact(false)
-    }
-
-    function onPop()
-    {
-        const {showContact} = this.state || {}
-        if (showContact) this.setState({showContact: false}, () =>
-        {
-            document.body.style.overflowY = "auto"
-            window.removeEventListener("popstate", onPop)
-        })
-    }
-
-    function showContact()
-    {
-        setIsVisibleContact(true)
-        document.body.style.overflowY = "hidden"
-        window.history.pushState("for-history", "", document.location.pathname)
-        window.addEventListener("popstate", onPop, {passive: true})
-    }
-
+    const {showContact} = props
     return (
         <>
             <header className="header">
@@ -50,10 +24,6 @@ function Header()
                     <Material className="header-content-item order" backgroundColor="var(--second-material-color)" onClick={showContact}>ثبت سفارش</Material>
                 </div>
             </header>
-            {
-                isVisibleContact &&
-                <ContactUs hideContact={hideContact}/>
-            }
         </>
     )
 }
