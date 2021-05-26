@@ -6,14 +6,17 @@ import ContactUs from "./views/containers/ContactUs"
 import ToastContainer from "./views/containers/ToastContainer"
 import Switch from "./views/components/Switch"
 import Route from "./views/components/Route"
+import Resize from "./helpers/resize"
 
 const HomePage = lazy(() => import("./views/pages/HomePage"))
 const ResumePage = lazy(() => import("./views/pages/ResumePage"))
 const AboutUsPage = lazy(() => import("./views/pages/AboutUsPage"))
+const Sidebar = lazy(() => import("./views/containers/Sidebar"))
 
 function App()
 {
     const [isVisibleContact, setIsVisibleContact] = useState(false)
+    const size = Resize()
 
     useEffect(() => process.env.NODE_ENV !== "production" && loadColors(), [])
 
@@ -24,11 +27,11 @@ function App()
         window.removeEventListener("popstate", onPop)
     }
 
-    function showContact()
+    function showContact({dontPush = false})
     {
         setIsVisibleContact(true)
         document.body.style.overflowY = "hidden"
-        window.history.pushState("for-history", "", document.location.pathname)
+        if (!dontPush) window.history.pushState("for-history", "", document.location.pathname)
         window.addEventListener("popstate", onPop, {passive: true})
     }
 
@@ -47,6 +50,13 @@ function App()
             <Footer/>
 
             <ToastContainer/>
+
+            {
+                size.clientWidth <= 480 &&
+                <Suspense fallback={null}>
+                    <Sidebar showContact={showContact}/>
+                </Suspense>
+            }
 
             {
                 isVisibleContact &&

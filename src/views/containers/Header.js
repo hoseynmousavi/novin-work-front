@@ -5,10 +5,16 @@ import Link from "../components/Link"
 function Header(props)
 {
     const {showContact} = props
+
+    function toggleSidebar()
+    {
+        document.getElementById("sidebarBack")?.click()
+    }
+
     return (
         <>
             <header className="header">
-                <Material className="header-logo-hamburger">
+                <Material className="header-logo-hamburger" onClick={toggleSidebar}>
                     <div className="header-logo-line"/>
                     <div className="header-logo-line"/>
                 </Material>
@@ -18,7 +24,6 @@ function Header(props)
                     <div className="header-logo-text">نوین ورک</div>
                 </Link>
                 <div className="header-content">
-                    <Material className="header-content-item">خدمات</Material>
                     <Link to="/resume"><Material className="header-content-item">نمونه کارها</Material></Link>
                     <Material className="header-content-item">تعرفه‌ها</Material>
                     <Link to="/about-us"><Material className="header-content-item">درباره ما</Material></Link>

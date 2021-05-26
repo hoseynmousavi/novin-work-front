@@ -19,12 +19,11 @@ function HomePage(props)
         <>
             <section className="home-section">
                 <div className="home-section-right">
-                    <h2 className="home-section-title">طراحی سایت و اپلیکیشن</h2>
-                    <div className="home-section-desc">کلاس کارِت رو بالا ببر</div>
+                    <h2 className="home-section-title">{process.env.REACT_APP_TITLE}</h2>
+                    <div className="home-section-desc">{process.env.REACT_APP_BANNER}</div>
                     <img className="home-section-img mobile" src={design} alt="طراحی نوین"/>
                     <div className="home-section-desc silver">
-                        ما در نوین ورک با بهره گیری از پیشرفته ترین فناوری های روز دنیا با افتخار اقدام به طراحی وبسایت شما می‌کنیم.
-                        ظاهری شکیل، امنیت بالا، سرعت مناسب و بهینه‌سازی را در کنار هم جمع کرده‌ایم.
+                        {process.env.REACT_APP_EXPLAINATION}
                     </div>
                     <Material className="home-section-button" backgroundColor="var(--second-material-color)" onClick={showContact}>ثبت سفارش</Material>
                 </div>
