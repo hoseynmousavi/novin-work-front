@@ -18,10 +18,10 @@
 }
 
 .resume-box {
-  border: 2px solid var(--second-background-color);
+  background-color: var(--second-background-color);
   padding: 20px;
   margin: 15px;
-  width: 350px;
+  width: 360px;
   border-radius: var(--third-radius);
   flex-grow: 1;
   cursor: pointer;
@@ -30,7 +30,7 @@
 .resume-box-hide {
   padding: 0 20px;
   margin: 0 15px;
-  width: 354px;
+  width: 360px;
   flex-grow: 1;
 }
 
@@ -39,24 +39,46 @@
   border-radius: var(--second-radius);
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   display: block;
 }
 
 .resume-box-img-fix-cont {
   position: fixed;
-  left: var(--desktop-padding);
-  right: var(--desktop-padding);
-  top: 25px;
-  bottom: 25px;
-  width: calc(100% - 2 * var(--desktop-padding));
+  padding: 25px var(--desktop-padding);
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   z-index: 5;
   overflow: auto;
   border-radius: var(--second-radius);
+  backdrop-filter: blur(6px);
+  background-color: var(--first-material-color);
+  animation: resume ease 0.1s;
+
+  @media screen and (max-width: 1000px) {
+    padding: 25px var(--tablet-padding);
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 25px var(--mobile-padding);
+  }
 }
 
 .resume-box-img-fix {
   width: 100%;
   display: block;
   border-radius: var(--second-radius);
+}
+
+.resume-box-img-loading {
+  position: absolute;
+  left: calc(50% - 30px);
+  top: calc(50% - 30px);
+  transition: opacity ease 0.2s;
+
+  &.hide {
+    opacity: 0;
+  }
 }
