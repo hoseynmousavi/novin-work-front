@@ -43,14 +43,7 @@ class Switch extends PureComponent
 
         const urls = children.reduce((sum, item) =>
         {
-            if (item?.props?.path) return [...sum, 
-                item.props.path === "*"
-                ? ".*" 
-                : item.props.exact 
-                  ? item.props.ignoreSlash
-                    ? `^${item.props.path}\\/?$`
-                    : `^${item.props.path}$`
-                  : item.props.path.replace(/:\w+/g, ".*")]
+            if (item?.props?.path) return [...sum, item.props.path === "*" ? ".*" : item.props.exact ? `^${item.props.path}$` : item.props.path.replace(/:\w+/g, ".*")]
             else return [...sum, false]
         }, [])
 
@@ -159,11 +152,8 @@ class Switch extends PureComponent
                     {
                         elem.setState({...elem.state, showChildIndex, location}, () =>
                         {
-                            setTimeout(() =>
-                            {
-                                document.body.style.overflowY = "auto"
-                                window.scroll({top: 0})
-                            }, 1)
+                            document.body.style.overflowY = "auto"
+                            window.scroll({top: 0})
                             setTimeout(() => window.requestAnimationFrame(showNext), 150)
                         })
                     }
