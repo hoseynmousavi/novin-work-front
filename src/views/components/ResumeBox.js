@@ -8,17 +8,22 @@ function ResumeBox(props)
     const [isShow, setIsShow] = useState(false)
     const [isLoaded, setIsLoaded] = useState(false)
 
+    function popState()
+    {
+        setIsShow(false)
+        document.body.style.overflowY = "auto"
+        window.removeEventListener("popstate", popState)
+    }
+
     function toggleShow()
     {
-        if (isShow)
-        {
-            setIsShow(false)
-            document.body.style.overflowY = "auto"
-        }
+        if (isShow) window.history.back()
         else
         {
             setIsShow(true)
             document.body.style.overflowY = "hidden"
+            window.history.pushState("for-history", "", document.location.pathname)
+            window.addEventListener("popstate", popState, {passive: true})
             if (!isLoaded)
             {
                 let img = new Image()
