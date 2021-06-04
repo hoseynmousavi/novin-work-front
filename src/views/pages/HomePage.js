@@ -11,6 +11,7 @@ import LaptopSvg from "../../media/svgs/LaptopSvg"
 import MobileFrame from "../../media/svgs/MobileFrame"
 import site from "../../media/images/resume.jpg"
 import siteMobile from "../../media/images/resume-m.jpg"
+import Link from "../components/Link"
 
 function HomePage(props)
 {
@@ -54,13 +55,15 @@ function HomePage(props)
 
             <section className="home-section-third">
                 <div className="home-section-third-content">
-                    <div className="home-section-third-first">خودتان قضاوت کنید</div>
                     <div className="home-section-third-second">جدیدترین نمونه‌کارهای ما</div>
+                    <div className="home-section-third-first">خودتان قضاوت کنید</div>
                     <div className="home-section-third-third">در این قسمت می توانید آخرین نمونه‌کارهای شرکت نوین ورک را در زمینه طراحی سایت های فروشگاهی، شرکتی، خبری و سفارشی ببینید.</div>
-                    <Material className="home-section-third-button desktop">
-                        <div>مشاهده نمونه‌کارها</div>
-                        <KeyboardArrowSvg className="home-section-third-button-svg"/>
-                    </Material>
+                    <Link to="/resume">
+                        <Material className="home-section-third-button desktop">
+                            <div>مشاهده نمونه‌کارها</div>
+                            <KeyboardArrowSvg className="home-section-third-button-svg"/>
+                        </Material>
+                    </Link>
                 </div>
                 <div className="home-section-third-images">
                     <img loading="lazy" className="home-section-third-img-mobile" src={siteMobile} alt="آخرین نمونه کار نوین ورک"/>
@@ -68,10 +71,12 @@ function HomePage(props)
                     <img loading="lazy" className="home-section-third-img-in" src={site} alt="آخرین نمونه کار نوین ورک"/>
                     <LaptopSvg className="home-section-third-img"/>
                 </div>
-                <Material className="home-section-third-button mobile">
-                    <div>مشاهده نمونه‌کارها</div>
-                    <KeyboardArrowSvg className="home-section-third-button-svg"/>
-                </Material>
+                <Link to="/resume">
+                    <Material className="home-section-third-button mobile">
+                        <div>مشاهده نمونه‌کارها</div>
+                        <KeyboardArrowSvg className="home-section-third-button-svg"/>
+                    </Material>
+                </Link>
             </section>
 
             <section className="home-section-forth">

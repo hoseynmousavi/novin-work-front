@@ -219,12 +219,12 @@
 .home-section-third-first {
   color: var(--first-color);
   font-size: var(--big-font);
+  margin: 20px 0;
 }
 
 .home-section-third-second {
   font-size: var(--damn-font);
   font-weight: bold;
-  margin: 10px 0 20px 0;
 
   @media screen and (max-width: 480px) {
     font-size: var(--huge-font);
