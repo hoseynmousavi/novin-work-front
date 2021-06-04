@@ -1,11 +1,10 @@
-import resumeThumb from "../../media/images/resume/resume-thumb.png"
-import resumeMain from "../../media/images/resume/resume-main.png"
 import Material from "./Material"
 import React, {useState} from "react"
 import MyLoader from "./MyLoader"
 
-function ResumeBox()
+function ResumeBox(props)
 {
+    const {resumeThumb, resumeMain} = props
     const [isShow, setIsShow] = useState(false)
     const [isLoaded, setIsLoaded] = useState(false)
 
