@@ -31,6 +31,7 @@ function HomePage(props)
             </section>
 
             <section className="home-section-second">
+                <div className="home-courses-arrow-down"><KeyboardArrowSvg className="home-courses-arrow-down-svg"/></div>
                 <div className="home-section-second-title">خدمات ما</div>
                 <div className="home-section-second-content">
                     <HomeDesc title="طراحی وبسایت"
@@ -56,7 +57,7 @@ function HomePage(props)
                 <div className="home-section-third-content">
                     <div className="home-section-third-second">جدیدترین نمونه‌کارهای ما</div>
                     <div className="home-section-third-first">خودتان قضاوت کنید</div>
-                    <div className="home-section-third-third">در این قسمت می توانید آخرین نمونه‌کارهای شرکت نوین ورک را در زمینه طراحی سایت های فروشگاهی، شرکتی، خبری و سفارشی ببینید.</div>
+                    <div className="home-section-third-third desktop">در این قسمت می توانید آخرین نمونه‌کارهای شرکت نوین ورک را در زمینه طراحی سایت های فروشگاهی، شرکتی، خبری و سفارشی ببینید.</div>
                     <Link className="home-section-third-button desktop" to="/resume">
                         <Material className="home-section-third-button-material">
                             <div>مشاهده نمونه‌کارها</div>
@@ -67,6 +68,7 @@ function HomePage(props)
                 <div className="home-section-third-img-cont">
                     <img className="home-section-third-img" src={example} alt=""/>
                 </div>
+                <div className="home-section-third-third mobile">در این قسمت می توانید آخرین نمونه‌کارهای شرکت نوین ورک را در زمینه طراحی سایت های فروشگاهی، شرکتی، خبری و سفارشی ببینید.</div>
                 <Link className="home-section-third-button mobile" to="/resume">
                     <Material className="home-section-third-button-material">
                         <div>مشاهده نمونه‌کارها</div>
