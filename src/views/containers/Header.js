@@ -1,10 +1,20 @@
 import logo from "../../media/images/logo.png"
 import Material from "../components/Material"
 import Link from "../components/Link"
+import ScrollY from "../../helpers/scrollY"
 
 function Header(props)
 {
-    const {showContact} = props
+    const {showContact, location} = props
+    const scrollY = ScrollY()
+    const orderBtn = document.getElementById("create-order")
+    const passOrderBtn = location === "/" ?
+        orderBtn ?
+            orderBtn.offsetTop < scrollY + +process.env.REACT_APP_HEADER_HEIGHT.replace("px", "") - 15 - orderBtn.offsetHeight
+            :
+            false
+        :
+        true
 
     function toggleSidebar()
     {
@@ -18,11 +28,16 @@ function Header(props)
                     <div className="header-logo-line"/>
                     <div className="header-logo-line"/>
                 </Material>
-                <div className="header-logo-name">نوین ورک</div>
-                <Link to="/" className="header-logo-cont">
+
+                <div className={`header-logo-name ${passOrderBtn ? "hide" : ""}`}>نوین ورک</div>
+
+                <Link to="/" className={`header-logo-cont ${passOrderBtn ? "center" : ""}`}>
                     <img className="header-logo" src={logo} alt="نوین ورک"/>
                     <div className="header-logo-text">نوین ورک</div>
                 </Link>
+
+                <Material className={`header-content-item order mobile ${passOrderBtn ? "" : "hide"}`} backgroundColor="var(--second-material-color)" onClick={passOrderBtn ? showContact : undefined}>سفارش</Material>
+
                 <div className="header-content">
                     <Link to="/resume"><Material className="header-content-item">نمونه کارها</Material></Link>
                     <Material className="header-content-item">تعرفه‌ها</Material>

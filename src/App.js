@@ -13,8 +13,9 @@ const ResumePage = lazy(() => import("./views/pages/ResumePage"))
 const AboutUsPage = lazy(() => import("./views/pages/AboutUsPage"))
 const Sidebar = lazy(() => import("./views/containers/Sidebar"))
 
-function App()
+function App(props)
 {
+    const {location} = props
     const [isVisibleContact, setIsVisibleContact] = useState(false)
     const size = Resize()
 
@@ -37,7 +38,7 @@ function App()
 
     return (
         <>
-            <Header showContact={showContact}/>
+            <Header location={location} showContact={showContact}/>
             <main className="main">
                 <Suspense fallback={null}>
                     <Switch>

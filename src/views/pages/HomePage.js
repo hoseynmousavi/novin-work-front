@@ -1,16 +1,15 @@
 import Material from "../components/Material"
-import design from "../../media/images/design.png"
+import design from "../../media/images/design.svg"
+import support from "../../media/images/support.svg"
+import mentoring from "../../media/images/mentoring.svg"
 import HomeDesc from "../components/HomeDesc"
 import KeyboardArrowSvg from "../../media/svgs/KeyboardArrowSvg"
+import example from "../../media/images/example.jpg"
 import HomeService from "../components/HomeService"
 import WebSvg from "../../media/svgs/WebSvg"
 import AppSvg from "../../media/svgs/AppSvg"
 import SeoSvg from "../../media/svgs/SeoSvg"
 import GraphicSvg from "../../media/svgs/GraphicSvg"
-import LaptopSvg from "../../media/svgs/LaptopSvg"
-import MobileFrame from "../../media/svgs/MobileFrame"
-import site from "../../media/images/resume.jpg"
-import siteMobile from "../../media/images/resume-m.jpg"
 import Link from "../components/Link"
 
 function HomePage(props)
@@ -26,7 +25,7 @@ function HomePage(props)
                     <div className="home-section-desc silver">
                         {process.env.REACT_APP_EXPLAINATION}
                     </div>
-                    <Material className="home-section-button" backgroundColor="var(--second-material-color)" onClick={showContact}>ثبت سفارش</Material>
+                    <Material id="create-order" className="home-section-button" backgroundColor="var(--second-material-color)" onClick={showContact}>ثبت سفارش</Material>
                 </div>
                 <img className="home-section-img desktop" src={design} alt="طراحی نوین"/>
             </section>
@@ -65,11 +64,8 @@ function HomePage(props)
                         </Material>
                     </Link>
                 </div>
-                <div className="home-section-third-images">
-                    <img loading="lazy" className="home-section-third-img-mobile" src={siteMobile} alt="آخرین نمونه کار نوین ورک"/>
-                    <MobileFrame className="home-section-third-mobile"/>
-                    <img loading="lazy" className="home-section-third-img-in" src={site} alt="آخرین نمونه کار نوین ورک"/>
-                    <LaptopSvg className="home-section-third-img"/>
+                <div className="home-section-third-img-cont">
+                    <img className="home-section-third-img" src={example} alt=""/>
                 </div>
                 <Link className="home-section-third-button mobile" to="/resume">
                     <Material className="home-section-third-button-material">
@@ -81,7 +77,10 @@ function HomePage(props)
 
             <section className="home-section-forth">
                 <div className="home-section-forth-title">خدمات پلاس</div>
-                <HomeService/>
+                <div className="home-section-forth-content-box">
+                    <HomeService img={support} title="مشاوره رایگان" description="اگر شما در زمینه طراحی سایت، طراحی اپلیکیشن و سئو نیاز به مشاوره دارید، همکاران ما آماده راهنمایی صحیح و ارائه پیشنهاد و پاسخگویی به سوالات شما هستند. برای هماهنگی قرار حضوری، تلفنی یا آنلاین با ما تماس بگیرید."/>
+                    <HomeService img={mentoring} title="پشتیبانی آنلاین" description="بعد از پایان طراحی سایت و با توجه به ضرورت پشتیبانی وب سایت متخصصین ما در بخش پشتیبانی برای حل مشکلات وب سایت به صورت آنلاین در خدمت شما هستند."/>
+                </div>
             </section>
         </>
     )
