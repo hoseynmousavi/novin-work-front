@@ -243,7 +243,7 @@
 }
 
 .home-section-third-img-cont {
-  max-width: 480px;
+  max-width: 450px;
   margin-right: 10%;
   border: 2px solid var(--first-background-color);
   padding: 15px;
@@ -259,6 +259,7 @@
   max-width: 100%;
   border-radius: var(--second-radius);
   display: block;
+  aspect-ratio: 450 / 299;
 }
 
 .home-section-third-first {
