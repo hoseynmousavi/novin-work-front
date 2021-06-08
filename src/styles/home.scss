@@ -40,12 +40,12 @@
   font-size: var(--big-font);
   margin: 20px 0 5px 0;
   color: var(--first-color);
-  @include justify;
-  text-align-last: right;
   line-height: 28px;
 
   &.silver {
     color: var(--second-text-color);
+    @include justify;
+    text-align-last: right;
   }
 
   @media screen and (max-width: 480px) {
@@ -116,6 +116,7 @@
   height: 30px;
   transform: rotate(-135deg);
   fill: var(--first-text-color);
+  animation: home-arrow ease 1.3s infinite;
 }
 
 .home-section-second {
@@ -135,6 +136,10 @@
   font-size: var(--huge-font);
   margin: 10px 0 50px 0;
   font-weight: bold;
+
+  @media screen and (max-width: 480px) {
+    margin: 25px 0 50px 0;
+  }
 }
 
 .home-section-second-content {
@@ -229,6 +234,10 @@
   @media screen and (max-width: 480px) {
     padding: 50px var(--mobile-padding);
     flex-wrap: wrap;
+  }
+
+  @media screen and (max-height: 600px) {
+    min-height: calc(100vh - 100px);
   }
 }
 

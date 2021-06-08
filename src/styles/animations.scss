@@ -35,3 +35,15 @@
     opacity: 1;
   }
 }
+
+@keyframes home-arrow {
+  0% {
+    transform: rotate(-135deg) translateX(0)
+  }
+  50% {
+    transform: rotate(-135deg) translateX(-5px)
+  }
+  100% {
+    transform: rotate(-135deg) translateX(0)
+  }
+}

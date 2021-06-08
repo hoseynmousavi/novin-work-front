@@ -1,2 +1,8 @@
+@import "mixin";
+
 .about {
+  display: flex;
+  padding: 50px var(--desktop-padding);
+  @include justify;
+  line-height: 28px;
 }

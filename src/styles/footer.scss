@@ -77,6 +77,10 @@
   align-items: center;
   padding-bottom: 15px;
   height: 60px;
+
+  @media screen and (max-width: 900px) {
+    height: auto;
+  }
 }
 
 .footer-left-title-text {
@@ -106,8 +110,10 @@
   height: 100%;
   cursor: pointer;
 
-  &:last-child {
-    margin: 5px 0 5px 0;
+  @media screen and (min-width: 480px) {
+    &:last-child {
+      margin: 5px 0 5px 0;
+    }
   }
 
   &.modal {
@@ -115,9 +121,9 @@
   }
 
   @media screen and (max-width: 480px) {
-    max-width: 50%;
+    min-width: 100%;
     text-align: center;
-    margin: 0;
+    margin: 3px 0;
   }
 }
 
@@ -135,7 +141,7 @@
   }
 
   @media screen and (max-width: 480px) {
-    justify-content: flex-start;
+    justify-content: center;
 
     div {
       min-width: 100px;
@@ -159,6 +165,7 @@
 
   @media screen and (max-width: 900px) {
     border-bottom: none;
+    justify-content: center;
   }
 }
 
@@ -195,6 +202,7 @@
   @media screen and (max-width: 480px) {
     width: 100%;
     margin-bottom: 5px;
+    text-align: center;
   }
 }
 
