@@ -360,6 +360,7 @@
 
 .home-section-forth {
   padding: 50px var(--desktop-padding);
+  background-color: var(--second-background-color);
 
   @media screen and (max-width: 1000px) {
     padding: 50px var(--tablet-padding);
@@ -442,4 +443,102 @@
   @media screen and (max-width: 480px) {
     font-size: var(--regular-font);
   }
+}
+
+.home-price-box {
+  width: 50%;
+  flex-grow: 1;
+  padding: 20px 40px;
+  border-left: 2px solid var(--first-background-color);
+  margin: 30px 0;
+
+  &:last-child {
+    border-left: none;
+  }
+
+  @media screen and (max-width: 480px) {
+    border-top: 2px solid var(--first-background-color);
+    border-bottom: 2px solid var(--first-background-color);
+    border-left: none;
+    padding: 30px 40px;
+    margin: 0;
+
+    &:last-child {
+      border-bottom: none;
+      border-top: none;
+    }
+  }
+}
+
+.home-price-box-title {
+  font-size: var(--huge-font);
+}
+
+.home-price-box-price {
+  font-size: var(--huge-font);
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.home-price-box-price-desc {
+  font-size: var(--regular-font);
+  font-weight: normal;
+}
+
+.home-price-box-desc {
+  font-size: var(--tiny-font);
+  font-weight: normal;
+  line-height: 25px;
+}
+
+.home-section-price {
+  display: flex;
+  background-color: var(--first-background-color);
+  padding: 50px var(--desktop-padding);
+
+  @media screen and (max-width: 1000px) {
+    padding: 50px var(--tablet-padding);
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 50px var(--mobile-padding);
+    flex-wrap: wrap;
+  }
+}
+
+.home-section-price-item {
+  width: 400px;
+  flex-grow: 1;
+  margin: 10px;
+  border-radius: var(--second-radius);
+  background-color: var(--second-background-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.08);
+
+  @media screen and (min-width: 480px) {
+    &:first-child {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 10px 0;
+  }
+}
+
+.home-section-price-item-img {
+  width: 100%;
+}
+
+.home-price-box-btn {
+  padding: 8px 16px;
+  border-radius: var(--third-radius);
+  background-color: var(--first-color);
+  margin-top: 20px;
+  color: var(--second-background-color);
+  display: inline-block;
+  cursor: pointer;
 }

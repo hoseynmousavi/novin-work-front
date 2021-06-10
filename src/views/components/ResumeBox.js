@@ -37,7 +37,7 @@ function ResumeBox(props)
     return (
         <>
             <Material className="resume-box" onClick={toggleShow}>
-                <img className="resume-box-img" src={resumeThumb} alt=""/>
+                <img loading="lazy" className="resume-box-img" src={resumeThumb} alt=""/>
                 <p className="resume-box-name">{name}</p>
             </Material>
             {

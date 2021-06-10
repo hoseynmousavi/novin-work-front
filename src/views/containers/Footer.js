@@ -11,7 +11,7 @@ function Footer()
             <div className="footer-sections">
                 <div className="footer-right">
                     <div className="footer-right-title">
-                        <img className="footer-right-title-svg" src={logo} alt="نوین ورک"/>
+                        <img loading="lazy" className="footer-right-title-svg" src={logo} alt="نوین ورک"/>
                         <div className="footer-right-title-text">از نوین ورک بیشتر بدانیم</div>
                     </div>
                     <div className="footer-right-text">

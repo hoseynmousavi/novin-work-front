@@ -37,94 +37,112 @@ import resumeMain19 from "../media/images/resume/resume-main19.jpg"
 
 const ResumeList = [
     {
-        name: "طراحی سایت فروشگاهی لوازم دیجیتال",
+        name: "طراحی سایت فروشگاهی",
         thumb: resumeThumb,
         main: resumeMain,
+        order: 18,
     },
     {
         name: "طراحی سایت آموزش ورزش",
         thumb: resumeThumb1,
         main: resumeMain1,
+        order: 17,
     },
     {
         name: "طراحی سایت فروشگاهی",
         thumb: resumeThumb2,
         main: resumeMain2,
+        order: 17,
     },
     {
         name: "طراحی سایت مشاوره آنلاین",
         thumb: resumeThumb3,
         main: resumeMain3,
+        order: 17,
     },
     {
         name: "طراحی سایت خبری",
         thumb: resumeThumb4,
         main: resumeMain4,
+        order: 17,
     },
     {
         name: "طراحی سایت خبری",
         thumb: resumeThumb5,
         main: resumeMain5,
+        order: 17,
     },
     {
         name: "طراحی سایت شرکتی",
         thumb: resumeThumb7,
         main: resumeMain7,
+        order: 2,
     },
     {
         name: "طراحی سایت و اپلیکیشن شرکتی",
         thumb: resumeThumb8,
         main: resumeMain8,
+        order: 5,
     },
     {
         name: "طراحی سایت شرکتی",
         thumb: resumeThumb9,
         main: resumeMain9,
+        order: 17,
     },
     {
         name: "طراحی سایت کلینیک",
         thumb: resumeThumb11,
         main: resumeMain11,
+        order: 4,
     },
     {
         name: "طراحی سایت شرکتی",
         thumb: resumeThumb12,
         main: resumeMain12,
+        order: 1,
     },
     {
         name: "طراحی سایت مشاوره آنلاین",
         thumb: resumeThumb13,
         main: resumeMain13,
+        order: 17,
     },
     {
         name: "طراحی سایت فروشگاهی",
         thumb: resumeThumb14,
         main: resumeMain14,
+        order: 3,
     },
     {
         name: "طراحی سایت مشاوره آنلاین",
         thumb: resumeThumb15,
         main: resumeMain15,
+        order: 17,
     },
     {
         name: "طراحی سایت فروشگاهی",
         thumb: resumeThumb16,
         main: resumeMain16,
+        order: 6,
     },
     {
         name: "طراحی سایت فروشگاهی",
         thumb: resumeThumb17,
         main: resumeMain17,
+        order: 7,
     },
     {
         name: "طراحی سایت سفارشی",
         thumb: resumeThumb18,
         main: resumeMain18,
+        order: 8,
     },
     {
         name: "طراحی سایت سفارشی",
         thumb: resumeThumb19,
         main: resumeMain19,
+        order: 9,
     },
 ]
 
