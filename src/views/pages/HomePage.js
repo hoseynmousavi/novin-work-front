@@ -25,9 +25,9 @@ function HomePage(props)
                     <h2 className="home-section-title">{process.env.REACT_APP_TITLE}</h2>
                     <div className="home-section-desc">{process.env.REACT_APP_BANNER}</div>
                     <img className="home-section-img mobile" src={design} alt="طراحی نوین"/>
-                    <div className="home-section-desc silver">
-                        {process.env.REACT_APP_EXPLAINATION}
-                    </div>
+                    <h3 className="home-section-desc silver">
+                        {process.env.REACT_APP_DESCRIPTION}
+                    </h3>
                     <Material id="create-order" className="home-section-button" backgroundColor="var(--second-material-color)" onClick={showContact}>ثبت سفارش</Material>
                 </div>
                 <img className="home-section-img desktop" src={design} alt="طراحی نوین"/>
@@ -81,18 +81,21 @@ function HomePage(props)
             </section>
 
             <section className="home-section-price">
-                <div className="home-section-price-item">
-                    <img loading="lazy" className="home-section-price-item-img" src={company} alt=""/>
-                    <div className="home-section-second-content">
-                        <HomePrice showContact={showContact} title="شرکتی ساده" pricePrefix="از" price="1 میلیون" priceDesc="تومان" description="با کمترین هزینه سایتی ساده و شیک را برایتان طراحی می‌کنیم"/>
-                        <HomePrice showContact={showContact} title="شرکتی پیشرفته" pricePrefix="از" price="3 میلیون" priceDesc="تومان" description="در این پکیج با امکانات متنوع و اختصاصی سایت شما را متفاوت طراحی می‌کنیم"/>
+                <div className="home-section-price-title" id="home-price">تعرفه‌ها</div>
+                <div className="home-section-price-content">
+                    <div className="home-section-price-item">
+                        <img loading="lazy" className="home-section-price-item-img" src={company} alt=""/>
+                        <div className="home-section-second-content">
+                            <HomePrice showContact={showContact} title="شرکتی ساده" pricePrefix="از" price="1 میلیون" priceDesc="تومان" description="با کمترین هزینه سایتی ساده و شیک را برایتان طراحی می‌کنیم"/>
+                            <HomePrice showContact={showContact} title="شرکتی پیشرفته" pricePrefix="از" price="3 میلیون" priceDesc="تومان" description="در این پکیج با امکانات متنوع و اختصاصی سایت شما را متفاوت طراحی می‌کنیم"/>
+                        </div>
                     </div>
-                </div>
-                <div className="home-section-price-item">
-                    <img loading="lazy" className="home-section-price-item-img" src={shopping} alt=""/>
-                    <div className="home-section-second-content">
-                        <HomePrice showContact={showContact} title="فروشگاهی ساده" pricePrefix="از" price="3 میلیون" priceDesc="تومان" description="با کمترین هزینه فروشگاه اینترنتی خود را راه‌اندازی کنید"/>
-                        <HomePrice showContact={showContact} title="فروشگاهی پیشرفته" pricePrefix="از" price="5 میلیون" priceDesc="تومان" description="در این پکیج با امکانات متنوع و اختصاصی سایت شما را متفاوت طراحی می‌کنیم"/>
+                    <div className="home-section-price-item">
+                        <img loading="lazy" className="home-section-price-item-img" src={shopping} alt=""/>
+                        <div className="home-section-second-content">
+                            <HomePrice showContact={showContact} title="فروشگاهی ساده" pricePrefix="از" price="3 میلیون" priceDesc="تومان" description="با کمترین هزینه فروشگاه اینترنتی خود را راه‌اندازی کنید"/>
+                            <HomePrice showContact={showContact} title="فروشگاهی پیشرفته" pricePrefix="از" price="5 میلیون" priceDesc="تومان" description="در این پکیج با امکانات متنوع و اختصاصی سایت شما را متفاوت طراحی می‌کنیم"/>
+                        </div>
                     </div>
                 </div>
             </section>

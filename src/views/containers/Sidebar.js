@@ -1,6 +1,7 @@
 import React, {PureComponent} from "react"
 import Link from "../components/Link"
 import Material from "../components/Material"
+import goToPrice from "../../helpers/goToPrice"
 
 class Sidebar extends PureComponent
 {
@@ -150,6 +151,12 @@ class Sidebar extends PureComponent
         showContact({dontPush: true})
     }
 
+    goToPriceSection = () =>
+    {
+        this.hideSide()
+        setTimeout(() => goToPrice(), 100)
+    }
+
     render()
     {
         return (
@@ -163,7 +170,7 @@ class Sidebar extends PureComponent
                     <Material className="header-sidebar-sign-in" onClick={this.showContact}>ثبت سفارش</Material>
                     <div className="header-sidebar-section">
                         <Link to="/resume" onClick={e => this.hideSide(true, e, "/resume")}><Material className="header-sidebar-section-item">نمونه کارها</Material></Link>
-                        <Material className="header-sidebar-section-item">تعرفه‌ها</Material>
+                        <Material className="header-sidebar-section-item" onClick={this.goToPriceSection}>تعرفه‌ها</Material>
                         <Link to="/about-us" onClick={e => this.hideSide(true, e, "/about-us")}><Material className="header-sidebar-section-item">درباره ما</Material></Link>
                     </div>
                 </div>

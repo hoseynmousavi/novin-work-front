@@ -7,8 +7,8 @@ import ToastContainer from "./views/containers/ToastContainer"
 import Switch from "./views/components/Switch"
 import Route from "./views/components/Route"
 import Resize from "./helpers/resize"
+import HomePage from "./views/pages/HomePage"
 
-const HomePage = lazy(() => import("./views/pages/HomePage"))
 const ResumePage = lazy(() => import("./views/pages/ResumePage"))
 const AboutUsPage = lazy(() => import("./views/pages/AboutUsPage"))
 const Sidebar = lazy(() => import("./views/containers/Sidebar"))
