@@ -24,7 +24,17 @@ function Material(props)
             pageX = null
             pageY = null
 
-            if (!isSlow) setTimeout(() => target && target.removeChild(tempRipple), 600)
+            if (!isSlow) setTimeout(() =>
+            {
+                try
+                {
+                    target && target.removeChild(tempRipple)
+                }
+                catch (e)
+                {
+                    console.log("material remove fail:", e.message)
+                }
+            }, 600)
         }
     }
 

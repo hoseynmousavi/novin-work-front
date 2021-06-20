@@ -2,7 +2,6 @@ import {lazy, Suspense, useEffect, useState} from "react"
 import loadColors from "./helpers/loadColors"
 import Header from "./views/containers/Header"
 import Footer from "./views/containers/Footer"
-import ContactUs from "./views/containers/ContactUs"
 import ToastContainer from "./views/containers/ToastContainer"
 import Switch from "./views/components/Switch"
 import Route from "./views/components/Route"
@@ -12,11 +11,13 @@ import HomePage from "./views/pages/HomePage"
 const ResumePage = lazy(() => import("./views/pages/ResumePage"))
 const AboutUsPage = lazy(() => import("./views/pages/AboutUsPage"))
 const Sidebar = lazy(() => import("./views/containers/Sidebar"))
+const ContactUs = lazy(() => import("./views/containers/ContactUs"))
 
 function App(props)
 {
     const {location} = props
     const [isVisibleContact, setIsVisibleContact] = useState(false)
+    const [defaultTab, setDefaultTab] = useState(null)
     const size = Resize()
 
     useEffect(() => process.env.NODE_ENV !== "production" && loadColors(), [])
@@ -28,9 +29,10 @@ function App(props)
         window.removeEventListener("popstate", onPop)
     }
 
-    function showContact({dontPush = false})
+    function showContact({dontPush = false, defaultTab = null})
     {
         setIsVisibleContact(true)
+        setDefaultTab(defaultTab)
         document.body.style.overflowY = "hidden"
         if (!dontPush) window.history.pushState("for-history", "", document.location.pathname)
         window.addEventListener("popstate", onPop, {passive: true})
@@ -61,7 +63,9 @@ function App(props)
 
             {
                 isVisibleContact &&
-                <ContactUs/>
+                <Suspense fallback={null}>
+                    <ContactUs defaultTab={defaultTab}/>
+                </Suspense>
             }
         </>
     )

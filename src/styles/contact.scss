@@ -76,14 +76,12 @@
   border-radius: var(--first-radius);
   z-index: 2;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  height: 255px;
+  overflow: auto;
   border: 1px solid var(--third-radius);
   transition: all ease 0.2s;
 
   &.hide {
     border: 0 solid var(--second-color);
-    height: 0;
   }
 }
 

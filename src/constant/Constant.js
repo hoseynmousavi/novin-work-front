@@ -12,7 +12,11 @@ const Constant = {
     ENGLISH_REGEX: /^[a-zA-Z\s]+$/,
     ENGLISH_AND_NUMBERS_REGEX: /^[a-zA-Z0-9\s]+$/,
     SUBJECT_CHOICES: {
-        "ثبت سفارش": "create_order",
+        "پکیج شرکتی ساده": "order_simple_company",
+        "پکیج شرکتی پیشرفته": "order_advance_company",
+        "پکیج فروشگاهی ساده": "order_simple_sale",
+        "پکیج فروشگاهی پیشرفته": "order_advance_sale",
+        "پکیج سفارشی": "custom_package",
         "گزارش مشکل": "bug_report",
         "انتقاد و پیشنهاد": "comment",
         "همکاری با ما": "collaboration",

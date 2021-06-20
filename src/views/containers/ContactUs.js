@@ -17,17 +17,24 @@ class ContactUs extends PureComponent
     {
         super(props)
         this.state = {
-            title: "ثبت سفارش",
+            title: "پکیج سفارشی",
+            height: "0",
         }
+    }
+
+    componentDidMount()
+    {
+        const {defaultTab} = this.props
+        if (defaultTab) this.setState({title: defaultTab})
     }
 
     hideContact = () => window.history.back()
 
-    showDialog = () => this.setState({showDialog: true})
+    showDialog = () => this.setState({showDialog: true, height: "300px"})
 
-    hideDialog = () => this.setState({showDialog: false})
+    hideDialog = () => this.setState({showDialog: false, height: "0"})
 
-    selectTitle = title => this.setState({title, titleValid: true}, () => this.hideDialog())
+    selectTitle = title => this.setState({title}, () => this.hideDialog())
 
     changeInput = name => e =>
     {
@@ -45,45 +52,48 @@ class ContactUs extends PureComponent
 
     submit = () =>
     {
-        let {isLoading, contactValid, titleValid, descValid, desc, contact, title} = this.state || {}
+        let {isLoading, contactValid, descValid, desc, contact, title} = this.state || {}
         if (!isLoading)
         {
-            if (contactValid && titleValid && descValid)
+            if (contactValid && descValid)
             {
-                this.setState({isLoading: true}, () =>
+                if (Constant.SUBJECT_CHOICES[title])
                 {
-                    request.post({
-                        url: "contact",
-                        data: {
-                            subject: Constant.SUBJECT_CHOICES[title],
-                            description: desc,
-                            contact_info: contact,
-                        },
-                    })
-                        .then(() =>
-                        {
-                            this.setState({isLoading: false}, () =>
-                            {
-                                this.hideContact()
-                                toast.success("پیام شما با موفقیت ارسال شد")
-                            })
+                    this.setState({isLoading: true}, () =>
+                    {
+                        request.post({
+                            url: "contact",
+                            data: {
+                                subject: Constant.SUBJECT_CHOICES[title],
+                                description: desc,
+                                contact_info: contact,
+                            },
                         })
-                        .catch(() => this.setState({isLoading: false}, () => toast.error("ارسال پیام با مشکل مواجه شد، بعداً امتحان کنید!")))
-                })
+                            .then(() =>
+                            {
+                                this.setState({isLoading: false}, () =>
+                                {
+                                    this.hideContact()
+                                    toast.success("پیام شما با موفقیت ارسال شد")
+                                })
+                            })
+                            .catch(() => this.setState({isLoading: false}, () => toast.error("ارسال پیام با مشکل مواجه شد، بعداً امتحان کنید!")))
+                    })
+                }
+                else toast.error("خطا در عنوان متن!")
             }
             else
             {
-                if (titleValid === undefined) titleValid = false
                 if (descValid === undefined) descValid = false
                 if (contactValid === undefined) contactValid = false
-                this.setState({titleValid, descValid, contactValid})
+                this.setState({descValid, contactValid})
             }
         }
     }
 
     render()
     {
-        const {showDialog, title, isLoading, contact, contactValid, titleValid, descValid, desc} = this.state || {}
+        const {showDialog, title, isLoading, contact, contactValid, descValid, desc, height} = this.state || {}
         return (
             <>
                 <div className="show-session-quiz-back dont-gesture" onClick={this.hideContact}/>
@@ -94,28 +104,20 @@ class ContactUs extends PureComponent
                     <div className="header-contact-modal-title">ارتباط با ما</div>
                     <div className="header-contact-modal-content">
                         <div className="header-contact-modal-content-form">
-                            <Material className={`header-contact-modal-content-form-title ${titleValid || titleValid === undefined ? "" : "err"}`} onClick={this.showDialog}>
+                            <Material className="header-contact-modal-content-form-title" onClick={this.showDialog}>
                                 <div>{title ? title : "موضوع پیام *"}</div>
                                 <ArrowSvg className="header-contact-modal-content-form-title-svg"/>
                             </Material>
-                            <div className={`header-contact-modal-content-form-dialog ${showDialog ? "" : "hide"}`}>
-                                <Material className="header-contact-modal-content-form-title item" onClick={() => this.selectTitle("ثبت سفارش")}>
-                                    <div>ثبت سفارش</div>
-                                </Material>
-                                <Material className="header-contact-modal-content-form-title item" onClick={() => this.selectTitle("گزارش مشکل")}>
-                                    <div>گزارش مشکل</div>
-                                </Material>
-                                <Material className="header-contact-modal-content-form-title item" onClick={() => this.selectTitle("انتقاد و پیشنهاد")}>
-                                    <div>انتقاد و پیشنهاد</div>
-                                </Material>
-                                <Material className="header-contact-modal-content-form-title item" onClick={() => this.selectTitle("همکاری با ما")}>
-                                    <div>همکاری با ما</div>
-                                </Material>
-                                <Material className="header-contact-modal-content-form-title item" onClick={() => this.selectTitle("سایر")}>
-                                    <div>سایر</div>
-                                </Material>
+                            <div className={`header-contact-modal-content-form-dialog ${showDialog ? "" : "hide"}`} style={{height}}>
+                                {
+                                    Object.keys(Constant.SUBJECT_CHOICES).map(item =>
+                                        <Material key={item} className="header-contact-modal-content-form-title item" onClick={() => this.selectTitle(item)}>
+                                            <div>{item}</div>
+                                        </Material>,
+                                    )
+                                }
                             </div>
-                            <textarea placeholder="متن پیام *"
+                            <textarea placeholder="توضیحات *"
                                       className={`header-contact-modal-content-form-area ${descValid || descValid === undefined ? "" : "err"}`}
                                       rows={10}
                                       value={desc || ""}
