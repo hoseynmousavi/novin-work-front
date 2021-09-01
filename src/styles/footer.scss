@@ -194,8 +194,8 @@
 }
 
 .footer-left-social-title {
-  width: 195px;
-  min-width: 195px;
+  width: 215px;
+  min-width: 215px;
   display: inline-block;
 
   @media screen and (max-width: 480px) {
@@ -207,15 +207,15 @@
 
 .footer-left-social-icons {
   display: inline-flex;
-  width: calc(100% - 205px);
+  width: calc(100% - 260px);
   justify-content: space-between;
   align-items: center;
   max-width: 200px;
 
   &.wrap {
     display: flex;
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 90%;
     margin-top: 30px;
   }
 

@@ -4,7 +4,7 @@ import support from "../../media/images/support.svg"
 import mentoring from "../../media/images/mentoring.svg"
 import HomeDesc from "../components/HomeDesc"
 import KeyboardArrowSvg from "../../media/svgs/KeyboardArrowSvg"
-import example from "../../media/images/example.jpg"
+import example from "../../media/images/resume.svg"
 import HomeService from "../components/HomeService"
 import WebSvg from "../../media/svgs/WebSvg"
 import AppSvg from "../../media/svgs/AppSvg"
@@ -69,7 +69,7 @@ function HomePage(props)
                     </Link>
                 </div>
                 <div className="home-section-third-img-cont">
-                    <img loading="lazy" className="home-section-third-img" src={example} alt=""/>
+                    <img className="home-section-third-img" src={example} alt=""/>
                 </div>
                 <div className="home-section-third-third mobile">در این قسمت می توانید آخرین نمونه‌کارهای شرکت نوین ورک را در زمینه طراحی سایت های فروشگاهی، شرکتی، خبری و سفارشی ببینید.</div>
                 <Link className="home-section-third-button mobile" to="/resume">
@@ -81,19 +81,19 @@ function HomePage(props)
             </section>
 
             <section className="home-section-price">
-                <div className="home-section-price-title" id="home-price">تعرفه‌ها</div>
+                <div className="home-section-price-title" id="home-price">تعرفه طراحی سایت</div>
                 <div className="home-section-price-content">
                     <div className="home-section-price-item">
-                        <img loading="lazy" className="home-section-price-item-img" src={company} alt=""/>
+                        <img className="home-section-price-item-img" src={company} alt=""/>
                         <div className="home-section-second-content">
-                            <HomePrice showContact={showContact} title="شرکتی ساده" pricePrefix="از" price="1 میلیون" priceDesc="تومان" description="با کمترین هزینه سایتی ساده و شیک را برایتان طراحی می‌کنیم"/>
+                            <HomePrice showContact={showContact} title="شرکتی اقتصادی" pricePrefix="از" price="1 میلیون" priceDesc="تومان" description="با کمترین هزینه سایتی ساده و شیک را برایتان طراحی می‌کنیم"/>
                             <HomePrice showContact={showContact} title="شرکتی پیشرفته" pricePrefix="از" price="3 میلیون" priceDesc="تومان" description="در این پکیج با امکانات متنوع و اختصاصی سایت شما را متفاوت طراحی می‌کنیم"/>
                         </div>
                     </div>
                     <div className="home-section-price-item">
-                        <img loading="lazy" className="home-section-price-item-img" src={shopping} alt=""/>
+                        <img className="home-section-price-item-img" src={shopping} alt=""/>
                         <div className="home-section-second-content">
-                            <HomePrice showContact={showContact} title="فروشگاهی ساده" pricePrefix="از" price="3 میلیون" priceDesc="تومان" description="با کمترین هزینه فروشگاه اینترنتی خود را راه‌اندازی کنید"/>
+                            <HomePrice showContact={showContact} title="فروشگاهی اقتصادی" pricePrefix="از" price="3 میلیون" priceDesc="تومان" description="با کمترین هزینه فروشگاه اینترنتی خود را راه‌اندازی کنید"/>
                             <HomePrice showContact={showContact} title="فروشگاهی پیشرفته" pricePrefix="از" price="5 میلیون" priceDesc="تومان" description="در این پکیج با امکانات متنوع و اختصاصی سایت شما را متفاوت طراحی می‌کنیم"/>
                         </div>
                     </div>
